@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- this is first been of Employee -->
+	<bean name="emp1" class="com.springcore.collection.Employee">
+
+		<property name="empName" value="Rohit Sharma" />
+		<!-- List of devices -->
+		<property name="devices">
+			<list>
+				<value>iPhone 9</value>
+				<value>Dell Laptop</value>
+				<value>Hp Printer</value>
+				<value>BSNL LandLine Phone</value>
+				<null />
+			</list>
+		</property>
+		<!-- Set of Phone Numbers -->
+		<property name="phoneNo">
+			<set>
+				<value>7887426161</value>
+				<value>9850481457</value>
+				<value>9766357093</value>
+			</set>
+		</property>
+		<!-- Map of courses -->
+		<property name="course">
+			<map>
+				<entry key="Java Course" value="5 Months" />
+				<entry key="Python Course" value="3 Months" />
+				<entry key="C Course" value="4 Months" />
+			</map>
+		</property>
+		<!-- Properties is created by props tag -->
+		<property name="props">
+			<props>
+				<prop key="FullName">Rohit Rajendra Sharma</prop>
+				<prop key="Email">rohit.r.s@gmail.com</prop>
+			</props>
+		</property>
+
+	</bean>
+
+	<!-- this is second been of Employee -->
+	<bean name="emp2" class="com.springcore.collection.Employee">
+
+	</bean>
+
+
+</beans>
+ 
