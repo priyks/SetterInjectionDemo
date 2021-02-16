@@ -3,26 +3,42 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- this is first been -->
-	<bean name="certificate"
+	<bean name="certificate1"
 		class="com.springcore.constrctor.Certificate">
-	<constructor-arg name="name" value="python 3 complete certification"/>
-	<constructor-arg name="duration" value="5" type="int"></constructor-arg>
-		
+		<constructor-arg name="name"
+			value="python 3 complete certification" />
+		<constructor-arg name="duration" value="5" type="int"></constructor-arg>
 	</bean>
 
 	<!-- this is second been -->
-	<bean name="person"
-		class="com.springcore.constrctor.Person">
-		<constructor-arg name="name" value="Rushikesh Kulkarni"/>
-		<constructor-arg name="age" value="22"/>
-		<constructor-arg name="certi" ref="certificate"/>
-		
+	<bean name="person1" class="com.springcore.constrctor.Person">
+		<constructor-arg name="name"
+			value="Rushikesh Kulkarni" />
+		<constructor-arg name="age" value="22" type="int" />
+		<constructor-arg name="certi" ref="certificate1" />
+
+	</bean>
+<!--  Constructor injection with c schema -->
+	<bean name="certificate2"
+		class="com.springcore.constrctor.Certificate" c:name="Spring Core" c:duration="5">
+	</bean>
+	<bean name="person2"  class="com.springcore.constrctor.Person">
+	<constructor-arg name="name" value="mukesh roy"/>
+	<constructor-arg name="age" value="30" type="int"/>
+	<constructor-arg name="certi" ref="certificate2"/>
+	<constructor-arg name="hobbies">
+	<set>
+	<value>bike riding</value>
+	<value>net surfing</value>
+	<value>reading books</value>
+	</set>
+	</constructor-arg>
 	</bean>
 
-	
 
 </beans>
  
