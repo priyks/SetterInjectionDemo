@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<!-- this is first been -->
+	<!-- <bean id="circle" class="com.codetointerface.Point">
+		<property name="pointX" value="0" />
+		<property name="pointY" value="0" />
+	</bean> -->
+	<bean id="pointZero" class="com.codetointerface.Point">
+	<qualifier value="circleRelated"></qualifier>
+		<property name="pointX" value="0" />
+		<property name="pointY" value="0" />
+	</bean>
+	<bean id="pointOne" class="com.codetointerface.Point">
+		<property name="pointX" value="20" />
+		<property name="pointY" value="0" />
+	</bean>
+	<bean id="pointTwo" class="com.codetointerface.Point">
+		<property name="pointX" value="0" />
+		<property name="pointY" value="-20" />
+	</bean>
+	<!-- <bean id="triangle" class="com.codetointerface.Triangle">
+		<property name="pointA" ref="pointZero" />
+		<property name="pointB" ref="pointOne" />
+		<property name="pointC" ref="pointTwo" />
+	</bean> -->
+
+	<bean id="circleDemo" class="com.codetointerface.Circle">
+		
+	</bean>
+	<context:annotation-config />
+
+	<bean
+		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
+</beans> 
