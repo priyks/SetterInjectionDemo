@@ -12,9 +12,20 @@
 
 		<property name="capacity" value="109.51" />
 	</bean>
+	
+		<bean name="engine2"
+		class="com.springcore.ref.Engine">
+		<property name="name" value="${engine.name}" />
+
+		<property name="capacity" value="${engine.capacity}" />
+	</bean>
 
 	<!-- this is third been using p schema -->
-	<bean name="bike" class="com.springcore.ref.Bike" p:brandName="Activa 6G" p:engine-ref="engine1" p:millage="55.5f" p:price="77889"/>
-
+	<bean name="bike" class="com.springcore.ref.Bike" p:brandName="Activa 6G" p:engine-ref="engine2" p:millage="55.5f" p:price="77889"/>
+    <bean class="com.springcore.ref.DisplayNameByBeanPostProcessor"></bean>
+    <bean class="com.springcore.ref.BeanFactoryPP"></bean>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations" value="classpath:/com/springcore/ref/engine.properties"></property>
+    </bean>
 </beans>
  
